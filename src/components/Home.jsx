@@ -1,7 +1,8 @@
 import React from 'react';
 import Hero from './Hero';
 import About from './About';
-import Projects from './Projects';
+// Projects section replaced with a preview component that links to the full list.
+import ProjectsPreview from './ProjectsPreview';
 import Contact from './Contact';
 
 // Home page component that aggregates the main sections of the site.
@@ -10,7 +11,7 @@ const Home = () => {
     <>
       <Hero />
       <About />
-      <Projects />
+      <ProjectsPreview />
       <Contact />
     </>
   );
