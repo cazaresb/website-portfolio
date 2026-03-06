@@ -15,14 +15,6 @@ const MemorySystem = () => {
       <div className="project-media">
         <img src={projectImage} alt="Memory Management System project" />
       </div>
-      <a
-        href="https://github.com/username/memory-management-system"
-        className="project-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Check out the repo
-      </a>
     </section>
   );
 };
