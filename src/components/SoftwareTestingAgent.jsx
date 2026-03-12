@@ -5,22 +5,27 @@ import projectImage from "../assets/project1.png";
 const SoftwareTestingAgent = () => {
   return (
     <section className="project-page">
-      <section class="section project-section">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Overview</h2>
-            <p class="section-text">
+      <section className="section project-section">
+        <div className="container">
+          <div className="section-header">
+            <h2 className="section-title">Overview</h2>
+          </div>
+
+          <div className="content-block card">
+            <div className="project-media">
+              <img src={projectImage} alt="Software Testing Agent project" />
+            </div>
+
+            <p className="section-text">
               An intelligent agent (using MCP) that automatically generates,
               executes, and iterates on test cases to achieve maximum code
               coverage. This project combines modern AI-assisted development
               with traditional software engineering practices and is fully
-              integrated using VSCode's Chat features.
+              integrated using VSCode&apos;s Chat features.
             </p>
-          </div>
 
-          <div class="content-block card">
-            <h3 class="content-title">Features</h3>
-            <ul class="feature-list">
+            <h3 className="content-title">Features</h3>
+            <ul className="feature-list">
               <li>Built on Node.js, Maven, and JUnit for testing.</li>
               <li>JaCoCo coverage report artifact creation.</li>
               <li>
@@ -31,142 +36,122 @@ const SoftwareTestingAgent = () => {
               </li>
               <li>
                 Custom automation tools for software development workflows:
-                <strong>AI Code Review Agent</strong> and
-                <strong>Specification-Based Testing Generator</strong>.
+                <strong> AI Code Review Agent</strong> and
+                <strong> Specification-Based Testing Generator</strong>.
               </li>
               <li>
                 Quality Metrics Dashboard that provides comprehensive coverage
                 reports that improve over time.
               </li>
             </ul>
-          </div>
-
-          <div class="content-block">
-            <p class="section-text">
+            <br></br>
+            <p className="section-text">
               This project aims to speed up the development process with strong
               software engineering principles, making it applicable to
               real-world development scenarios with the help of the software
               testing agent.
             </p>
 
-            <p class="section-text">
+            <p className="section-text">
               As a small demo, this repository contains a run on a Java utility
               codebase under the directory <code>/codebase</code>.
             </p>
-          </div>
 
-          <div class="content-block card">
-            <h3 class="content-title">Automated Test Improvement</h3>
-            <p class="section-text">
+            <h3 className="content-title">Automated Test Improvement</h3>
+            <p className="section-text">
               The agent provides automatic test enhancement based on coverage
               gaps.
             </p>
-            <p class="section-text">
+            <p className="section-text">
               The agent handles test failures with debugging and fix generation.
             </p>
-            <p class="section-text">
+            <p className="section-text">
               The agent tracks coverage at each iteration of improvement.
             </p>
-          </div>
 
-          <div class="content-block card">
-            <h3 class="content-title">Quality Metrics Dashboard</h3>
-            <p class="section-text">
+            <h3 className="content-title">Quality Metrics Dashboard</h3>
+            <p className="section-text">
               The agent keeps track of its progress as it generates and improves
               tests by tracking test quality metrics such as assertions per
               test, edge case coverage, and bug fixes.
             </p>
 
-            <p class="section-text">
+            <p className="section-text">
               For example, for each improvement in coverage or bug fixes, a
               commit is made to GitHub by the agent.
             </p>
 
-            <p class="section-text">
+            <p className="section-text">
               Whenever the agent makes a commit to the repository, it executes
-              the
-              <code>generate quality metrics dashboard</code> job.
+              the <code>generate-quality-metrics-dashboard</code> job.
             </p>
 
-            <p class="section-text">
+            <p className="section-text">
               The following files are created during workflow execution:
             </p>
-            <ul class="feature-list">
+            <ul className="feature-list">
               <li>
-                <code>testing-metrics.json</code> — instruction and branch
+                <code>testing-metrics.json</code> instruction and branch
                 coverage counts plus percentage metadata for the MCP agent.
               </li>
               <li>
-                <code>testing-dashboard.md</code> — summarizes coverage and run
+                <code>testing-dashboard.md</code> summarizes coverage and run
                 information, including assertions, edge cases, and bugs fixed.
               </li>
             </ul>
-
-            <p class="section-text">
-              You can find the dashboard file under
+            <br></br>
+            <p className="section-text">
+              You can find the dashboard file under{" "}
               <code>.github/testing-dashboard.md</code>.
             </p>
-          </div>
 
-          <div class="content-block">
-            <h2 class="section-title">Extension</h2>
-          </div>
-
-          <div class="content-block card">
-            <h3 class="content-title">Specification-Based Testing Generator</h3>
-            <p class="section-text">
+            <h4 className="content-title">
+              Specification-Based Testing Generator
+            </h4>
+            <p className="section-text">
               The agent performs boundary value analysis and generates
               equivalence class test cases.
             </p>
-          </div>
 
-          <div class="content-block card">
-            <h3 class="content-title">AI Code Review Agent</h3>
-            <p class="section-text">
+            <h4 className="content-title">AI Code Review Agent</h4>
+            <p className="section-text">
               This feature is planned for a later build.
             </p>
+
+            <h3 className="content-title">Output</h3>
+            <p className="section-text">
+              The following files are created at execution of the workflow job:
+            </p>
+            <ul className="feature-list">
+              <li>
+                <code>testing-metrics.json</code> — instruction and branch
+                coverage counts and percentage metadata for the MCP agent.
+              </li>
+              <li>
+                <code>testing-dashboard.md</code> — summarizes coverage and run
+                information on test quality details such as assertions, edge
+                cases, and bugs fixed.
+              </li>
+            </ul>
+            <br></br>
+            <p className="section-text">
+              You can find the dashboard file under{" "}
+              <code>.github/testing-dashboard.md</code>.
+            </p>
+
+            <a
+              href="https://github.com/cazaresb/Software_Testing_Agent"
+              className="project-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Check out the repo
+            </a>
           </div>
         </div>
-      </section>{" "}
-      <p>The following files are created at execution of the workflow job:</p>
-      <ul>
-        <li>
-          <code>testing-metrics.json</code> — Instruction + branch coverage
-          countrs and percentages metadata for the MCP agent
-        </li>
-        <li>
-          <code>testing-dashboard.md</code> — Summarizes coverage and run
-          information on test quality details (assertions, edge cases, bugs
-          fixed).
-        </li>
-      </ul>
-      <p>
-        You can find the dashboard file under{" "}
-        <code>.github/testing-dashboard.md</code>.
-      </p>
-      <h2>Extension</h2>
-      <h3>Specification-Based Testing Generator</h3>
-      <p>
-        The agent performs boundary value analysis and generates equivalence
-        class test cases.
-      </p>
-      <h3>AI Code Review Agent</h3>
-      <p>This feature is to come in a later build.</p>{" "}
-      {/* Media placeholder for a demo video or image. Replace the src with your own media. */}
-      <div className="project-media">
-        <img src={projectImage} alt="Software Testing Agent project" />
-      </div>
-      <a
-        href="https://github.com/cazaresb/Software_Testing_Agent"
-        className="project-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Check out the repo
-      </a>
+      </section>
     </section>
   );
 };
 
 export default SoftwareTestingAgent;
-

@@ -3,6 +3,12 @@
  * Basic resets, typography and layout styles are defined here.
  */
 
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+}
 /* Design tokens defined as CSS variables for reuse across the site. */
 :root {
   --bg-primary: #0a192f;
@@ -11,8 +17,8 @@
   --text-muted: #8892b0;
   --accent: #64ffda;
   --border-subtle: rgba(255, 255, 255, 0.1);
-  --container-width: 1000px;
-  --section-spacing: 4rem;
+  --container-width: 2000px;
+  --section-spacing: 1rem;
 }
 
 * {
@@ -26,6 +32,16 @@ body {
   line-height: 1.6;
   color: var(--text-primary);
   background-color: var(--bg-primary);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
 }
 
 a {
@@ -110,7 +126,10 @@ a {
 
 .hero-content {
   position: relative;
-  max-width: 600px;
+  /* Allow the hero content to grow wider on larger screens while still
+     maintaining a comfortable maximum width.  The min() function
+     constrains the content to 90% of its container or 900px. */
+  width: min(90%, 900px);
   margin-left: 5%;
 }
 
@@ -162,6 +181,9 @@ section {
   color: var(--text-primary);
 }
 
+.projects {
+  flex: 1;
+}
 /* Projects grid */
 .project-list {
   display: grid;
@@ -172,24 +194,28 @@ section {
 }
 
 .project-card {
-  background-color: var(--bg-secondary);
+  /* Updated card styling: add internal padding and adjust rounded corners. */
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 10px;
+  background: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 4px rgba(2, 12, 27, 0.2);
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(2, 12, 27, 0.3);
+  transform: translateY(-4px);
 }
 
 .project-image {
   width: 100%;
-  height: 300px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.project-image2 {
+  width: 100%;
+  height: 152px;
   object-fit: cover;
 }
 
@@ -206,7 +232,7 @@ section {
 
 .project-content p {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 .project-link {
@@ -274,13 +300,13 @@ section {
   padding: 1rem 0;
   background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-subtle);
-  margin-top: var(--section-spacing);
+  margin-top: auto;
   color: var(--text-muted);
 }
 
 /* Project pages */
 .project-page {
-  max-width: 800px;
+  max-width: 60%;
   margin: 2rem auto;
   padding: 0 1rem;
 }
@@ -294,7 +320,7 @@ section {
 .project-page p {
   margin-bottom: 1rem;
   line-height: 1.6;
-  color: var(--text-muted);
+  color: var(--text-primary);
 }
 
 .project-media {
@@ -305,7 +331,7 @@ section {
 
 .project-media img {
   width: 100%;
-  max-height: 400px;
+  max-height: 600px;
   object-fit: cover;
   border-radius: 8px;
 }
@@ -335,6 +361,7 @@ section {
   font-size: 1rem;
   line-height: 1.75;
   margin: 0 0 1rem 0;
+  color: var(--text-primary);
 }
 
 .content-block {
@@ -398,4 +425,91 @@ code {
     gap: 0.7rem;
     margin-left: 1rem;
   }
+}
+
+/* -------------------------------------------------------------------------
+ * Home page grid and panel styles
+ *
+ * The home page features a responsive two‑column layout on desktop that
+ * collapses into a single column on smaller viewports.  Sections use
+ * generous padding and consistent panel styling to improve readability.
+ */
+
+/* Section wrapper for the grid on the home page.  Adds vertical spacing
+   between the hero and contact sections. */
+.home-main {
+  margin-top: var(--section-spacing);
+  padding: var(--section-spacing) 0;
+}
+
+/* Grid container for the About and Projects panels.  The grid allocates
+   slightly more space to the About panel (1.1fr) than to the projects (0.9fr). */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Collapse the two‑column grid into a single column on narrow screens. */
+@media (max-width: 900px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* About section presented as a panel with a subtle background and border. */
+.about-panel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* Typography and spacing within the about panel. */
+.about-panel p {
+  line-height: 1.8;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.about-panel ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  list-style-type: disc;
+}
+
+.about-panel li {
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+/* Layout styles for the featured projects section on the home page. */
+.projects-featured {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stack featured project cards vertically with consistent spacing. */
+.featured-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Button style used for call‑to‑action links (e.g. view all projects). */
+.button-outline {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: var(--accent);
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.button-outline:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
 }
