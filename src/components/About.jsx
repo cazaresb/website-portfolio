@@ -16,11 +16,19 @@ const About = () => (
       Python, JavaScript, and SQL. I have hands-on experience managing IT
       infrastructure and leading teams in a professional setting.
       <br></br>
-      Safe to say, hardware and software are my passion. If you need a proactive
-      and emerging software engineer on your team with specialties in hardware
+      <br></br>
+      Hardware and software are my passion. If you need a proactive and emerging
+      software engineer on your team with specialties in:
+      <br></br>
+      <li>Object-oriented programming</li>
+      <li>Computer hardware</li>
+      <li>LAN and networking</li>
+      <li>AV solutions</li>
+      <li>Proven experience leading a team of technicians</li>
+      <br></br>
+      Then, we may be a good fit. <b>Please feel free to contact me below.</b>
     </p>
   </section>
 );
 
 export default About;
-

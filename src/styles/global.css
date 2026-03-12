@@ -155,7 +155,7 @@ section {
 .about .about-text {
   max-width: 800px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   background-color: var(--bg-secondary);
   padding: 1rem 2rem;
   border-radius: 8px;
