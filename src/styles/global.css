@@ -276,6 +276,11 @@ section {
   color: var(--text-primary);
 }
 
+.contact-note {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
 .contact-form button {
   padding: 0.7rem 1.2rem;
   border: 1px solid var(--accent);

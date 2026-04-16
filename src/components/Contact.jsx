@@ -32,6 +32,9 @@ const Contact = () => {
           Message
           <textarea name="message" value={formData.message} onChange={handleChange} required />
         </label>
+        <p className="contact-note">
+          Please send links instead of file attachments.
+        </p>
         <button type="submit">Send</button>
       </form>
     </section>
